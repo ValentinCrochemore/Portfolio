@@ -2,6 +2,11 @@
   <div class="work">
     <h1>Work</h1>
     <p>{{ work.title }}</p>
+    <p>{{ work.type }}</p>
+    <p>{{ work.client }}</p>
+    <ul v-for="technology in work.technologies">
+      <li>{{ technology }}</li>
+    </ul>
     <router-link to="/">Go back to home</router-link><br>
     <router-link :to="{ name: 'work', params: {id: work.id - 1}}" v-if="isPreviousDisplayed()">Previous</router-link>
     <router-link :to="{ name: 'work', params: {id: work.id + 1}}" v-if="isNextDisplayed()">Next</router-link>
@@ -9,18 +14,21 @@
 </template>
 
 <script>
-  // import { works } from '../main.js'
+  import { works } from '../utils/globals'
 
   export default {
     name: 'work',
-    props: ['works'],
     data () {
       return {
+        works: [],
         work: {}
       }
     },
     mounted () {
-      this.work = this.works[this.$route.params.id - 1]
+      works.query().then(response => {
+        this.works = response.data
+        this.work = this.works[this.$route.params.id - 1]
+      })
     },
     methods: {
       isPreviousDisplayed: function () {

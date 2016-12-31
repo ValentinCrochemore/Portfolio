@@ -1,7 +1,15 @@
 [
   {
     "id": 1,
-    "title": "work 1"
+    "title": "L'anthologie Palatine",
+    "type": "Front End Development",
+    "client": "Université de Montréal",
+    "technologies": [
+      "VueJS",
+      "ES6",
+      "Sass",
+      "HTML5"
+    ]
   },
   {
     "id": 2,
