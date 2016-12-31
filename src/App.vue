@@ -1,16 +1,27 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view :works="works"></router-view>
   </div>
 </template>
 
 <script>
 import Home from 'components/Home'
+import { works } from './main'
 
 export default {
   name: 'app',
   components: {
     Home
+  },
+  data () {
+    return {
+      works: []
+    }
+  },
+  mounted () {
+    works.query().then(response => {
+      this.works = response.data
+    })
   }
 }
 </script>

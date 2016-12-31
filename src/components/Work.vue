@@ -2,28 +2,25 @@
   <div class="work">
     <h1>Work</h1>
     <p>{{ work.title }}</p>
+    <router-link to="/">Go back to home</router-link><br>
     <router-link :to="{ name: 'work', params: {id: work.id - 1}}" v-if="isPreviousDisplayed()">Previous</router-link>
     <router-link :to="{ name: 'work', params: {id: work.id + 1}}" v-if="isNextDisplayed()">Next</router-link>
   </div>
 </template>
 
 <script>
-  import { works } from '../main.js'
+  // import { works } from '../main.js'
 
   export default {
     name: 'work',
+    props: ['works'],
     data () {
       return {
-        works: [],
         work: {}
       }
     },
     mounted () {
-      console.log(this.isPreviousDisplayed())
-      works.query().then(response => {
-        this.works = response.data
-        this.work = response.data[this.$route.params.id - 1]
-      })
+      this.work = this.works[this.$route.params.id - 1]
     },
     methods: {
       isPreviousDisplayed: function () {
@@ -35,9 +32,7 @@
     },
     watch: {
       '$route' (to, from) {
-        works.query().then(response => {
-          this.work = response.data[to.params.id - 1]
-        })
+        this.work = this.works[to.params.id - 1]
       }
     }
   }
