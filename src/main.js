@@ -13,9 +13,6 @@ import Work from 'components/Work'
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
-// Global variables
-export const works = Vue.resource('/static/works.json')
-
 // Routes definition
 const routes = [
   {

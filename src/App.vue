@@ -5,14 +5,10 @@
 </template>
 
 <script>
-import Home from 'components/Home'
-import { works } from './main'
+import { works } from './utils/globals'
 
 export default {
   name: 'app',
-  components: {
-    Home
-  },
   data () {
     return {
       works: []
