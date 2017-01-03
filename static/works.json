@@ -2,6 +2,8 @@
   {
     "id": 1,
     "title": "L'anthologie Palatine",
+    "image": "/static/img/work/anthologie-palatine.png",
+    "link": "http://anthologie.valentin-crochemore.fr/#!/",
     "type": "Front End Development",
     "client": "Université de Montréal",
     "technologies": [
