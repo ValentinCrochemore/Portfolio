@@ -10,8 +10,19 @@
 </template>
 
 <script>
+  import { works } from '../utils/globals.js'
+
   export default {
     name: 'works',
-    props: ['works']
+    data: function () {
+      return {
+        works: []
+      }
+    },
+    mounted: function () {
+      works.query().then(response => {
+        this.works = response.data
+      })
+    }
   }
 </script>
