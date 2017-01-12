@@ -1,8 +1,7 @@
 <template>
-  <transition name="slide" mode="in-out">
+  <transition name="fade">
     <div
       class="work"
-      :style="{ backgroundImage: 'url(' + imageBig + ')' }"
       tabindex="0"
       @keyup.left="onLeftPress()"
       @keyup.up="onUpPress()"
@@ -15,7 +14,6 @@
 </template>
 
 <script>
-  import { works } from '../utils/globals.js'
   import WorkContent from './partials/WorkContent'
   import WorkNavigation from './partials/WorkNavigation'
 
@@ -25,30 +23,8 @@
       WorkContent,
       WorkNavigation
     },
-    data () {
-      return {
-        work: {},
-        imageBig: '',
-        transitionName: 'slide'
-      }
-    },
     mounted: function () {
       document.querySelector('.work').focus()
-      works.query().then(response => {
-        this.works = response.data
-        this.work = this.works[this.$route.params.id - 1]
-        this.imageBig = this.work.image.big
-      })
-    },
-    watch: {
-      '$route' (to, from) {
-        if (to.params.id && from.params.id) {
-          this.transitionName = 'switch'
-        }
-
-        this.work = this.works[to.params.id - 1]
-        this.imageBig = this.work.image.big
-      }
     },
     methods: {
       onLeftPress: function () {

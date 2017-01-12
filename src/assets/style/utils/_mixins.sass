@@ -1,0 +1,33 @@
+// Box Shadow
+=box-shadow( $horiz : .5em , $vert : .5em , $blur : 0px , $spread : 0px , $color : #000000 )
+  -webkit-box-shadow: $horiz $vert $blur $spread $color
+  -moz-box-shadow: $horiz $vert $blur $spread $color
+  box-shadow: $horiz $vert $blur $spread $color
+
+// Transition
+@mixin transition($args)
+  -webkit-transition: $args
+  -moz-transition: $args
+  -ms-transition: $args
+  -o-transition: $args
+  transition: $args
+
+// Transform
+=transform($transforms)
+  -moz-transform: $transforms
+  -o-transform: $transforms
+  -ms-transform: $transforms
+  -webkit-transform: $transforms
+  transform: $transforms
+
+// Translate 3D
+=translate3d($x, $y, $z)
+  +transform(translate3d($x, $y, $z))
+
+// Rotate
+=rotate($deg)
+  +transform(rotate($deg))
+
+// Scale X
+=scaleX($scale)
+  +transform(scaleX($scale))

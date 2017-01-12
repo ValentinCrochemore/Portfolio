@@ -1,13 +1,41 @@
-.slide-enter-active
-  transition: transform 3s ease-out
+.fade-enter-active
+  transition: opacity .5s ease-out
 
-.slide-leave-active
-  transition: transform 3s ease-out
-  top: 0
-  position: absolute
+.fade-enter
+  opacity: 0
 
-.slide-leave
-  transform: translateX(0)
+.fade-enter-to
+  opacity: 1
 
-.slide-leave-to
-  transform: translateX(100%)
+.technologies,
+.title,
+.image,
+.type,
+.client,
+.back,
+.discover,
+.bulletpoints,
+.arrows
+  opacity: 0
+  animation: fadeIn 3s ease-out 3s both
+
+.image
+  animation: fadeIn 3s ease-out .5s both
+
+.technologies,
+.title,
+.type,
+.client
+  animation: fadeIn 3s ease-out .7s both
+
+.back,
+.discover,
+.bulletpoints,
+.arrows
+  animation: fadeIn 3s ease-out 1s both
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1

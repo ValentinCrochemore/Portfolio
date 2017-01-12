@@ -5,7 +5,7 @@
             v-if="isFirstWork"
             class="arrows prev"
     >
-      <img src="/static/images/arrow.png">
+      <img class="arrow" src="/static/images/arrow.png">
     </router-link>
     <ul class="bulletpoints">
       <li v-for="work in works">
@@ -20,7 +20,7 @@
             v-if="isLastWork"
             class="arrows next"
     >
-      <img src="/static/images/arrow.png">
+      <img class="arrow" src="/static/images/arrow.png">
     </router-link>
   </div>
 </template>
@@ -32,6 +32,7 @@
     name: 'work-navigation',
     data () {
       return {
+        works: [],
         work: {},
         isFirstWork: false,
         isLastWork: false
@@ -44,14 +45,6 @@
         this.isFirstWork = parseInt(this.$route.params.id) !== 1
         this.isLastWork = parseInt(this.$route.params.id) !== this.works.length
       })
-    },
-    methods: {
-      isPreviousDisplayed: function () {
-        return parseInt(this.$route.params.id) !== 1
-      },
-      isNextDisplayed: function () {
-        return parseInt(this.$route.params.id) !== this.works.length
-      }
     },
     watch: {
       '$route' (to, from) {

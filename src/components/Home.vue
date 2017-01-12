@@ -4,24 +4,28 @@
     tabindex="0"
     @keyup.right="onRightPress()"
   >
-    <h1>Home</h1>
-    <Works></Works>
-    <About></About>
-    <Contact></Contact>    
+    <app-header></app-header>
+    <div class="wrapper">
+      <index></index>
+      <Works></Works>
+      <About></About>
+    </div>
   </div>
 </template>
 
 <script>
+  import AppHeader from './partials/Header'
+  import Index from './Index'
   import Works from './Works'
   import About from './About'
-  import Contact from './Contact'
 
   export default {
     name: 'home',
     components: {
+      AppHeader,
+      Index,
       Works,
-      About,
-      Contact
+      About
     },
     methods: {
       onRightPress () {

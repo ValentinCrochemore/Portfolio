@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import VueLazyload from 'vue-lazyload'
 import App from './App'
 
 // Project components
@@ -12,6 +13,7 @@ import Work from 'components/Work'
 // Everything that Vue uses
 Vue.use(VueRouter)
 Vue.use(VueResource)
+Vue.use(VueLazyload)
 
 // Routes definition
 const routes = [

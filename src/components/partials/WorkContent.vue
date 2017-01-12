@@ -1,11 +1,11 @@
 <template>
   <div class="work-content">
-    <router-link to="/" class="back"><img src="/static/images/arrow.png">Back</router-link>
+    <router-link to="/" class="back"><img class="arrow" src="/static/images/arrow.png">Back</router-link>
     <h2 class="title">{{ work.title }}</h2>
     <div class="container">
       <p class="type">{{ work.type }}</p>
       <div class="wrapper">
-        <img class="image" :src="imageSmall">
+        <img class="image" v-lazy="imageSmall" :src="imageSmall">
         <ul class="technologies">
           <li v-for="technology in work.technologies">{{ technology }}</li>
         </ul>
