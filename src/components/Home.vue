@@ -1,35 +1,61 @@
 <template>
   <div
+    id="home"
     class="home"
     tabindex="0"
-    @keyup.right="onRightPress()"
+    @keyup.down.prevent="onDownPress"
   >
-    <app-header></app-header>
     <div class="wrapper">
-      <index></index>
-      <Works></Works>
-      <About></About>
+      <div>
+        <h2 class="job">Front / Back end Developer</h2>
+        <p class="job-description">
+          Petite description de ce métier merveilleusement merveilleux !<br>
+          Et aussi de ma belle personnalité...
+        </p>
+      </div>
+      <a class="scroll-container" href="#works">
+        <p>scroll</p>
+        <span class="indicator"></span>
+      </a>
     </div>
   </div>
 </template>
 
 <script>
-  import AppHeader from './partials/Header'
-  import Index from './Index'
-  import Works from './Works'
-  import About from './About'
+  import $ from 'jquery'
+  // import debounce from 'lodash.debounce'
 
-  export default {
+  export default{
     name: 'home',
-    components: {
-      AppHeader,
-      Index,
-      Works,
-      About
+    data: function () {
+      return {
+        isMoving: false
+      }
+    },
+    mounted: function () {
+      $(this.$el).focus()
+      // $(this.$el).on('mousewheel', debounce(this.onMouseWheel, 1000, { leading: true }))
+    },
+    beforeDestroy: function () {
+      this.$off()
     },
     methods: {
-      onRightPress () {
-        this.$router.push('/work')
+      onDownPress: function () {
+        this.worksSmoothScroll()
+      },
+      onMouseWheel: function (e) {
+        if (e.originalEvent.deltaY > 0 && !this.$parent.isMoving) {
+          console.log('wheel')
+          this.worksSmoothScroll()
+        }
+      },
+      worksSmoothScroll: function () {
+        $('a[href="#works"]')[0].click()
+        $('#body').focus()
+        this.$parent.isMoving = true
+        setTimeout(() => {
+          this.$parent.isMoving = false
+        }, 1000)
       }
     }
   }

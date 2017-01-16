@@ -4,21 +4,23 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import VueLazyload from 'vue-lazyload'
+import VueSmoothScroll from 'vue-smoothscroll'
 import App from './App'
 
 // Project components
-import Home from 'components/Home'
-import Work from 'components/Work'
+import Index from './components/Index'
+import Work from './components/Work'
 
 // Everything that Vue uses
 Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.use(VueLazyload)
+Vue.use(VueSmoothScroll)
 
 // Routes definition
 const routes = [
   {
-    path: '/', component: Home
+    path: '/', component: Index
   },
   {
     path: '/work/:id',
