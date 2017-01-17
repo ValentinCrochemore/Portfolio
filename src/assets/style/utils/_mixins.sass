@@ -5,12 +5,12 @@
   box-shadow: $horiz $vert $blur $spread $color
 
 // Transition
-@mixin transition($args)
-  -webkit-transition: $args
-  -moz-transition: $args
-  -ms-transition: $args
-  -o-transition: $args
-  transition: $args
+@mixin transition($args, $time: $defaultTime, $delay: 0s)
+  -webkit-transition: $time $args $delay
+  -moz-transition: $time $args $delay
+  -ms-transition: $time $args $delay
+  -o-transition: $time $args $delay
+  transition: $time $args $delay
 
 // Transform
 =transform($transforms)

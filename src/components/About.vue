@@ -1,9 +1,7 @@
 <template>
   <div
-    id="about"
-    class="about"
+    class="about section"
     tabindex="0"
-    @keyup.up.prevent="onUpPress"
   >
     <div class="wrapper">
       <h3 class="subtitle">About</h3>
@@ -28,28 +26,8 @@
 </template>
 
 <script>
-  import $ from 'jquery'
-  // import debounce from 'lodash.debounce'
-
   export default {
-    name: 'about',
-    mounted: function () {
-      // $(this.$el).on('mousewheel', debounce(this.onMouseWheel, 1000, { leading: true }))
-    },
-    beforeDestroy: function () {
-      this.$off()
-    },
-    methods: {
-      onUpPress: function () {
-        $('html, body').animate({
-          scrollTop: $('#works').offset().top
-        }, 500)
-        $('#works').focus()
-      },
-      worksSmoothScroll: function () {
-        $('a[href="#works"]')[0].click()
-        $('#works').focus()
-      }
-    }
+    name: 'about'
   }
 </script>
+

@@ -14,6 +14,7 @@
 </template>
 
 <script>
+  import $ from 'jquery'
   import WorkContent from './partials/WorkContent'
   import WorkNavigation from './partials/WorkNavigation'
 
@@ -24,6 +25,8 @@
       WorkNavigation
     },
     mounted: function () {
+      console.log('menu')
+      $('nav').hide()
       document.querySelector('.work').focus()
     },
     methods: {

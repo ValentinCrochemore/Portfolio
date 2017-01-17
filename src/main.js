@@ -4,7 +4,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import VueLazyload from 'vue-lazyload'
-import VueSmoothScroll from 'vue-smoothscroll'
 import App from './App'
 
 // Project components
@@ -15,7 +14,6 @@ import Work from './components/Work'
 Vue.use(VueRouter)
 Vue.use(VueResource)
 Vue.use(VueLazyload)
-Vue.use(VueSmoothScroll)
 
 // Routes definition
 const routes = [
@@ -37,6 +35,7 @@ const routes = [
 
 // The router instance
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

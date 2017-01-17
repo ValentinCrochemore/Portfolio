@@ -1,4 +1,4 @@
-nav
+#menu
   width: 100%
   position: fixed
   top: 0
@@ -7,23 +7,32 @@ nav
 
   a
     font-size: 20px
-    margin: 40px
+    margin: 40px 20px
     padding: 5px 0
     display: inline-block
     position: relative
 
     &.active
+      cursor: default
+
       &:before
         visibility: visible
         +scaleX(1)
-        +transition(all 0.3s ease-in-out 0s)
+        +transition($mainTransition)
 
-    &.inactive
       &:after
+        visibility: hidden
+        +scaleX(0)
+
+    &:hover
+      &:before
         visibility: visible
         +scaleX(1)
-        +transition(all 0.3s ease-in-out 0s)
-
+        +transition($mainTransition)
+      &:after
+         visibility: hidden
+         +scaleX(0)
+         +transition($mainTransition, 0s)
 
     &:before
       content: ''
@@ -32,10 +41,10 @@ nav
       height: 2px
       bottom: 0
       left: 0
-      background: $main-color
-      //visibility: hidden
+      background: $mainColor
+      visibility: hidden
       +scaleX(0)
-      +transition(all 0.3s ease-in-out 0.3s)
+      +transition($mainTransition, $defaultTime, $defaultDelay)
 
     &:after
       content: ''
@@ -45,7 +54,7 @@ nav
       bottom: 0
       left: 0
       background: $white
-      visibility: hidden
+      visibility: visible
       z-index: 1
-      +scaleX(0)
-
+      +scaleX(1)
+      +transition($mainTransition)

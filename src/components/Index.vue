@@ -1,9 +1,9 @@
 <template>
   <div
+    id="fullpage"
     class="index"
     tabindex="0"
     @keyup.right.prevent="onRightPress()"
-    v-smoothscroll="{ duration: 1000 }"
   >
     <app-header></app-header>
     <home></home>
@@ -14,7 +14,7 @@
 
 <script>
   import $ from 'jquery'
-  // import debounce from 'lodash.debounce'
+  import 'fullpage.js'
   import AppHeader from './partials/Header'
   import Home from './Home'
   import Works from './Works'
@@ -33,22 +33,28 @@
         isMoving: false
       }
     },
+    mounted: function () {
+      $('#menu a[href="' + this.$route.hash + '"]').addClass('active')
+      this.$route.hash ? $(this.$route.hash).focus() : $('#home').focus()
+      $('#fullpage').fullpage({
+        anchors: ['home', 'works', 'about'],
+        fixedElements: '#menu',
+        loopBottom: true
+      })
+    },
+    beforeDestroy: function () {
+      $.fn.fullpage.destroy('all')
+    },
+    watch: {
+      '$route' (to, from) {
+        $('#menu a').removeClass('active')
+        $('#menu a[href="' + to.hash + '"]').addClass('active')
+        $(to.hash).focus()
+      }
+    },
     methods: {
       onRightPress: function () {
         this.$router.push('/work')
-      },
-      onMouseWheel: function () {
-        let scrollTopPosition = Math.round($(window).scrollTop())
-        console.log($('#home'))
-        console.log(Math.round(scrollTopPosition))
-        console.log(document.querySelector('#home').clientHeight)
-        if (scrollTopPosition === 0) {
-          $('a[href="#works"]')[0].click()
-          $('#works').focus()
-        } else if (scrollTopPosition === document.querySelector('#home').clientHeight) {
-          $('a[href="#about"]')[0].click()
-          $('#about').focus()
-        }
       }
     }
   }

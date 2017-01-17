@@ -4,25 +4,22 @@
       Valentin
       <span class="name">Crochemore</span>
     </h1>
-    <nav>
+    <nav id="menu">
       <a
         href="#home"
-        @mouseover="onMouseOver"
-        @mouseout="onMouseOut"
+        data-menuanchor="home"
       >
         Home
       </a>
       <a
         href="#works"
-        @mouseover="onMouseOver"
-        @mouseout="onMouseOut"
+        data-menuanchor="works"
       >
         Works
       </a>
       <a
         href="#about"
-        @mouseover="onMouseOver"
-        @mouseout="onMouseOut"
+        data-menuanchor="about"
       >
         About
       </a>
@@ -30,17 +27,9 @@
   </header>
 </template>
 <script>
-  import $ from 'jquery'
-
   export default{
-    name: 'header',
-    methods: {
-      onMouseOver: function (e) {
-        $(e.target).removeClass('inactive').addClass('active')
-      },
-      onMouseOut: function (e) {
-        $(e.target).removeClass('active').addClass('inactive')
-      }
-    }
+    name: 'header'
   }
 </script>
+
+

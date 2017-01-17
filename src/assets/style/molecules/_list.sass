@@ -34,10 +34,10 @@ ul
           position: absolute
           top: 0
           left: 0
-          background: $main-color
+          background: $mainColor
           width: 0
           height: 100%
-          +transition(width .3s ease-out)
+          +transition($mainTransition)
 
         .works-content
           position: absolute
@@ -73,12 +73,12 @@ ul
           h4
             opacity: 1
             +translate3d(0, 0, 0)
-            +transition(all .3s ease-out .1s)
+            +transition($mainTransition)
 
           p
             opacity: 1
             +translate3d(0, 0, 0)
-            +transition(all .3s ease-out .4s)
+            +transition($mainTransition, $defaultTime, $defaultDelay)
 
   // List Bulletpoints
   &.bulletpoints
@@ -94,7 +94,7 @@ ul
         height: 16px
         border: 1px solid #fff
         transform: rotate(45deg)
-        transition: transform .3s ease-out .6s, height .3s ease-out .3s
+        transition: $bulletpointsHoverOff
         vertical-align: middle
         position: relative
 
@@ -115,7 +115,7 @@ ul
           padding: 0 23px
           opacity: 0
           max-width: 0
-          transition: .3s all ease-out
+          +transition($mainTransition)
           display: inline-block
           border: 1px solid #fff
 
@@ -126,13 +126,13 @@ ul
           background: #ffffff
           transform: rotate(0)
           height: 100%
-          transition: .3s transform ease-out, .3s height ease-out .3s
+          transition: $bulletpointsHoverOn
 
           span
             opacity: 1
             max-width: 500px
-            transition: 1s all ease-out .6s
+            +transition($mainTransition, 1s, .6s)
 
             p
               opacity: 1
-              transition: .3s opacity ease-out .8s
+              +transition($mainTransition, $defaultTime, .8s)
