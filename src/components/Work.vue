@@ -26,7 +26,7 @@
     },
     mounted: function () {
       console.log('menu')
-      $('nav').hide()
+      $('nav').remove()
       document.querySelector('.work').focus()
     },
     methods: {

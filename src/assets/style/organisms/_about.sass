@@ -5,3 +5,51 @@
   .wrapper
     display: flex
     flex-direction: column
+
+  &.active
+    .subtitle
+      animation: fadeInTranslateXIn .5s ease-out both
+
+    .about-wrapper,
+    .socials-container
+      animation: fadeInTranslateYIn .5s ease-out .5s both
+
+  &:not(.active)
+    .subtitle
+      animation: fadeInTranslateXOut .5s ease-out both
+
+    .about-wrapper,
+    .socials-container
+      animation: fadeInTranslateYOut .5s ease-out both
+
+@keyframes fadeInTranslateXIn
+  0%
+    opacity: 0
+    +translate3d(-100px, 0, 0)
+  100%
+    opacity: 1
+    +translate3d(0, 0, 0)
+
+@keyframes fadeInTranslateXOut
+  0%
+    opacity: 1
+    +translate3d(0, 0, 0)
+  100%
+    opacity: 0
+    +translate3d(-100px, 0, 0)
+
+@keyframes fadeInTranslateYIn
+  0%
+    opacity: 0
+    +translate3d(0, 100px, 0)
+  100%
+    opacity: 1
+    +translate3d(0, 0, 0)
+
+@keyframes fadeInTranslateYOut
+  0%
+    opacity: 1
+    +translate3d(0, 0, 0)
+  100%
+    opacity: 0
+    +translate3d(0, 100px, 0)

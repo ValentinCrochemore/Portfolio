@@ -3,6 +3,91 @@
   height: 100vh !important
   position: relative
 
+  &.active
+    .job
+      animation: fadeInTranslateXIn .5s ease-out both
+
+    .job-description
+      animation: widthIn .5s ease-out both
+
+    .scroll-container
+      p
+        animation: fadeInTranslateYIn .5s ease-out both
+
+      .indicator
+        animation: scaleYIn .5s ease-out both
+
+  &:not(.active)
+    .job
+      animation: fadeInTranslateXOut .5s ease-out both
+
+    .job-description
+      animation: widthOut 1s ease-out both
+
+    .scroll-container
+      p
+        animation: fadeInTranslateYOut .5s ease-out both
+
+      .indicator
+        animation: scaleYOut .5s ease-out both
+
   .wrapper
     display: flex
     align-items: center
+
+@keyframes widthIn
+  0%
+    width: 0
+  100%
+    width: 100%
+
+@keyframes widthOut
+  0%
+    width: 100%
+  100%
+    width: 0
+
+@keyframes fadeInTranslateXIn
+  0%
+    opacity: 0
+    +translate3d(-100px, 0, 0)
+  100%
+    opacity: 1
+    +translate3d(0, 0, 0)
+
+@keyframes fadeInTranslateXOut
+  0%
+    opacity: 1
+    +translate3d(0, 0, 0)
+  100%
+    opacity: 0
+    +translate3d(-100px, 0, 0)
+
+@keyframes fadeInTranslateYIn
+  0%
+    opacity: 0
+    +translate3d(0, -5px, 0)
+  100%
+    opacity: 1
+    +translate3d(0, 0, 0)
+
+@keyframes fadeInTranslateYOut
+  0%
+    opacity: 1
+    +translate3d(0, 0, 0)
+  100%
+    opacity: 0
+    +translate3d(0, -5px, 0)
+
+@keyframes scaleYIn
+  0%
+    +scaleY(0)
+  100%
+    +scaleY(1)
+
+@keyframes scaleYOut
+  0%
+    +scaleY(1)
+  100%
+    +scaleY(0)
+

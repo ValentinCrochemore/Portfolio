@@ -34,8 +34,9 @@
       }
     },
     mounted: function () {
-      $('#menu a[href="' + this.$route.hash + '"]').addClass('active')
-      this.$route.hash ? $(this.$route.hash).focus() : $('#home').focus()
+      let anchor = this.$route.hash.length > 0 ? this.$route.hash : '#home'
+      $('#menu a[href="' + anchor + '"]').addClass('active')
+      $(anchor).focus()
       $('#fullpage').fullpage({
         anchors: ['home', 'works', 'about'],
         fixedElements: '#menu',

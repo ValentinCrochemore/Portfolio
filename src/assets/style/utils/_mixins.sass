@@ -5,7 +5,7 @@
   box-shadow: $horiz $vert $blur $spread $color
 
 // Transition
-@mixin transition($args, $time: $defaultTime, $delay: 0s)
+=transition($args, $time: $defaultTime, $delay: 0s)
   -webkit-transition: $time $args $delay
   -moz-transition: $time $args $delay
   -ms-transition: $time $args $delay
@@ -31,3 +31,7 @@
 // Scale X
 =scaleX($scale)
   +transform(scaleX($scale))
+
+// Scale Y
+=scaleY($scale)
+  +transform(scaleY($scale))
