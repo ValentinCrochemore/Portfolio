@@ -45,6 +45,12 @@ a
       background: $mainColor
       color: $white
 
+  +phone
+    margin-top: 30px
+
+    a
+      font-size: 20px
+
 // Button socials
 .socials-container
   position: absolute
@@ -92,6 +98,9 @@ a
       bottom: 0
       left: 0
 
+  +phone
+    right: -20px
+
 // Button Discover
 .discover
   font-size: 23px
@@ -100,13 +109,13 @@ a
 
   a
     text-decoration: none
-    border: 2px solid #fff
+    border: 2px solid $mainColor
     padding: 10px 35px
     display: inline-block
     +transition($mainTransition)
 
     &:hover
-      background: #fff
+      background: $mainColor
       color: $white
 
 // Button Back

@@ -35,3 +35,16 @@
 // Scale Y
 =scaleY($scale)
   +transform(scaleY($scale))
+
+// Media Queries
+=phone
+  @media (max-width: #{$tabletWidth})
+    @content
+
+=tablet
+  @media (min-width: #{$tabletWidth}) and (max-width: #{$desktopWidth - 1px})
+    @content
+
+=desktop
+  @media (min-width: #{$desktopWidth})
+    @content

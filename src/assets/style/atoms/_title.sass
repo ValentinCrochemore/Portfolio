@@ -17,10 +17,22 @@ h1
       +translate3d(-200px, -100px, 0)
       animation: name .5s ease-out both
 
+    +phone
+      font-size: 15px
+      margin: 20px 0 0 40px
+
+      .name
+        font-size: 20px
+        top: -10px
+        left: -25px
+
 h2
   &.job
     font-family: $medium
     font-size: 70px
+
+    +phone
+      font-size: 35px
 
   &.title
     font-size: 66px
@@ -31,7 +43,11 @@ h3
   &.subtitle
     font-family: $semiBold
     font-size: 45px
-    padding: 30px 0 40px
+    padding: 30px 0 0
+
+    +phone
+      font-size: 35px
+      padding: 10px 0 0
 
 @keyframes fullname
   0%
@@ -44,7 +60,3 @@ h3
     +translate3d(-200px, -100px, 0)
   100%
     +translate3d(0, 0, 0)
-
-
-
-

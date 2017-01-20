@@ -13,6 +13,10 @@ ul
   &.works-list
     display: flex
     flex-wrap: wrap
+    margin-top: 40px
+
+    +phone
+      margin-top: 20px
 
     li
       display: inline-block
@@ -20,6 +24,29 @@ ul
       height: 300px
       position: relative
       opacity: 0
+
+      +phone
+        height: 16vh
+        width: 100%
+
+        &:after
+          display: none
+
+        a
+          .works-content
+            .works-wrapper
+              padding: 10px !important
+              background: $mainColor
+
+              h4
+                opacity: 1
+                font-size: 20px
+                color: $white
+
+              p
+                opacity: 1
+                font-size: 15px
+                color: $white
 
       &:before
         content: ""
@@ -100,7 +127,7 @@ ul
         display: inline-block
         width: 16px
         height: 16px
-        border: 1px solid #fff
+        border: 1px solid $mainColor
         transform: rotate(45deg)
         transition: $bulletpointsHoverOff
         vertical-align: middle
@@ -108,11 +135,11 @@ ul
 
         &.router-link-active
           cursor: default
-          background: #fff
+          background: $mainColor
 
         span
           position: absolute
-          background: #fff
+          background: $mainColor
           right: 100%
           white-space: nowrap
           top: -.5px
@@ -121,26 +148,27 @@ ul
           height: 32px
           line-height: 32px
           padding: 0 23px
-          opacity: 0
           max-width: 0
+          opacity: 0
           +transition($mainTransition)
           display: inline-block
-          border: 1px solid #fff
+          border: 1px solid $mainColor
 
           p
+            color: $white
             opacity: 0
 
         &:hover:not(.router-link-active)
-          background: #ffffff
+          background: $mainColor
           transform: rotate(0)
           height: 100%
           transition: $bulletpointsHoverOn
 
           span
-            opacity: 1
             max-width: 500px
-            +transition($mainTransition, 1s, .6s)
+            opacity: 1
+            +transition(max-width cubic-bezier(.28,.1,.29,.99), $defaultTime * 2, $defaultDelay * 2)
 
             p
               opacity: 1
-              +transition($mainTransition, $defaultTime, .8s)
+              +transition($mainTransition, $defaultTime, $defaultDelay * 3)
