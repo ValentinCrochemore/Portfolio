@@ -139,6 +139,7 @@ ul
 
         span
           position: absolute
+          display: inline-block
           background: $mainColor
           right: 100%
           white-space: nowrap
@@ -147,16 +148,14 @@ ul
           color: rgba(119, 124, 157, 0.5)
           height: 32px
           line-height: 32px
-          padding: 0 23px
           max-width: 0
           opacity: 0
-          +transition($mainTransition)
-          display: inline-block
-          border: 1px solid $mainColor
+          +transition(max-width cubic-bezier(.28,.1,.29,.99))
 
           p
             color: $white
             opacity: 0
+            padding: 0 23px
 
         &:hover:not(.router-link-active)
           background: $mainColor
@@ -172,3 +171,5 @@ ul
             p
               opacity: 1
               +transition($mainTransition, $defaultTime, $defaultDelay * 3)
+
+              
