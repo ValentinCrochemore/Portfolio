@@ -4,7 +4,7 @@
     <h2 class="title">{{ work.title }}</h2>
     <div class="container">
       <p class="type">{{ work.type }}</p>
-      <div class="wrapper">
+      <div class="wrapper work-wrapper">
         <img class="image" v-lazy="imageSmall">
         <ul class="technologies">
           <li v-for="technology in work.technologies">{{ technology }}</li>
