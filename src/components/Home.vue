@@ -11,7 +11,7 @@
           <vue-typer
                   text='Petite description de ce métier merveilleusement merveilleux !'
                   :repeat='0'
-                  type-delay='20'
+                  :type-delay='20'
                   @typed='onComplete'
           ></vue-typer>
           <br>
@@ -19,7 +19,7 @@
                   text='Et aussi de ma belle personnalité...'
                   v-if="isCompleted"
                   :repeat='0'
-                  type-delay='20'
+                  :type-delay='20'
           ></vue-typer>
         </div>
       </div>

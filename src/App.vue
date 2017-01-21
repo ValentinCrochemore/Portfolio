@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view :transition-name="transitionName"></router-view>
+    <transition :name="transitionName">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -15,10 +17,11 @@ export default {
   watch: {
     '$route' (to, from) {
       if (to.params.id && from.params.id) {
-        this.transitionName = 'switch'
+        this.transitionName = to.params.id > from.params.id ? 'next' : 'prev'
       } else {
         this.transitionName = 'slide'
       }
+      console.log(this.transitionName)
     }
   }
 }
@@ -27,4 +30,4 @@ export default {
 <style lang="sass">
   @import ./assets/style/main
 </style>
- 
+

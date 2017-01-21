@@ -14,6 +14,8 @@
 
 // Transform
 =transform($transforms)
+  $transforms: unquote($transforms)
+
   -moz-transform: $transforms
   -o-transform: $transforms
   -ms-transform: $transforms

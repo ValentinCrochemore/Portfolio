@@ -14,9 +14,12 @@ $white: #fff
 // transitions
 $defaultTime: .5s
 $defaultDelay: $defaultTime
-$mainTransition: all cubic-bezier(.28,.1,.29,.99)
-$bulletpointsHoverOn: $defaultTime transform ease-out, $defaultTime height ease-out $defaultDelay
-$bulletpointsHoverOff: $defaultTime transform cubic-bezier(.28,.1,.29,.99) $defaultDelay * 2, $defaultTime height cubic-bezier(.28,.1,.29,.99) $defaultDelay
+$defaultEase: cubic-bezier(.28,.1,.29,.99)
+$mainTransition: all $defaultEase
+$bulletpointsHoverOn: $defaultTime transform $defaultEase, $defaultTime height $defaultEase $defaultDelay
+$bulletpointsHoverOff: $defaultTime transform $defaultEase $defaultDelay, $defaultTime height $defaultEase
+$bulletpointsSpanHoverOn: $defaultTime * 2 max-width $defaultEase $defaultDelay * 2, $defaultTime height $defaultDelay
+$bulletpointsSpanHoverOff: $defaultTime max-width $defaultEase, $defaultTime height $defaultEase
 
 // Devices width
 $tabletWidth: 768px

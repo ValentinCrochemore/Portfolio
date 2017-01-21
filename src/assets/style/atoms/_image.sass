@@ -2,16 +2,21 @@ img
   &.image
     width: 60%
     transition: opacity 1s ease-out
-    +box-shadow(0, 2px, 9px, 0, rgba(0, 0, 0, 0.4))
 
     &[lazy=loading]
       opacity: 0
 
     &[lazy=loaded]
       opacity: 1
+      +box-shadow(0, 2px, 9px, 0, rgba(0, 0, 0, 0.4))
+
+    +phone
+      width: 100%
 
   &.arrows
     +translate3d(0, 0, 0)
 
     &:hover
       +translate3d(-5px, 0, 0)
+
+

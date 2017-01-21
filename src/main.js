@@ -36,7 +36,14 @@ const routes = [
 // The router instance
 const router = new VueRouter({
   mode: 'history',
-  routes
+  routes,
+  scrollBehavior (to) {
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    }
+  }
 })
 
 /* eslint-disable no-new */

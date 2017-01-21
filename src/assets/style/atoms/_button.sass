@@ -132,7 +132,16 @@ a
 
   .arrow
     padding-right: 20px
+    +translate3d(0, 0, 0)
     +transition($mainTransition)
+
+  &:hover
+    .arrow
+      +translate3d(-10px, 0, 0)
+
+  +phone
+    position: static
+    padding: 15px 0 0 15px
 
 // Button Arrows
 .arrows
@@ -142,9 +151,28 @@ a
     +transition($mainTransition)
 
   &.prev
-    +rotate(90deg)
     top: 80px
 
+    img
+      +transform("rotate(90deg) translate3d(0, 0, 0)")
+      +transition($mainTransition)
+
   &.next
-    +rotate(-90deg)
     bottom: 80px
+
+    img
+      +transform("rotate(-90deg) translate3d(0, 0, 0)")
+      +transition($mainTransition)
+
+  &:hover
+    &.prev
+      img
+        +transform("rotate(90deg) translate3d(-10px, 0, 0)")
+
+    &.next
+      img
+        +transform("rotate(-90deg) translate3d(-10px, 0, 0)")
+
+
+
+

@@ -9,7 +9,7 @@
         <li v-for="work in works" :id="'work-' + work.id">
           <router-link
                   :to="{ name: 'work', params: { id: work.id }}"
-                  :style="{'background-image': 'url(' + work.image.small + ')'}"
+                  v-lazy:background-image="work.image.small"
           >
             <div class="works-content">
               <div class="works-wrapper">

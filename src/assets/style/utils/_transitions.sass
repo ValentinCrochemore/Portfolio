@@ -1,0 +1,15 @@
+.next-enter-active,
+.next-leave-active
+  +transition($mainTransition)
+
+.next-enter
+  +translate3d(0, 100%, 0)
+
+.next-enter-to
+  +translate3d(0, 0, 0)
+
+.next-leave
+  +translate3d(0, 0, 0)
+
+.next-leave-to
+  +translate3d(0, -100%, 0)
