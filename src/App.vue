@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <transition :name="transitionName">
-      <router-view></router-view>
-    </transition>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -21,7 +19,6 @@ export default {
       } else {
         this.transitionName = 'slide'
       }
-      console.log(this.transitionName)
     }
   }
 }

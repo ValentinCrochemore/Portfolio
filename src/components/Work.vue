@@ -30,6 +30,11 @@
         this.works = response.data
       })
     },
+    watch: {
+      '$route' (to, from) {
+        this.transitionName = to.params.id > from.params.id ? 'next' : 'prev'
+      }
+    },
     methods: {
       onLeftPress: function () {
         this.$router.push({ path: '/', hash: 'works' })
@@ -48,14 +53,3 @@
   }
 
 </script>
-
-
-
-
-
-
-
-
-
-
-

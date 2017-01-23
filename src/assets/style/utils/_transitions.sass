@@ -1,6 +1,9 @@
 .next-enter-active,
 .next-leave-active
   +transition($mainTransition)
+  position: absolute !important
+  top: 0
+  left: 0
 
 .next-enter
   +translate3d(0, 100%, 0)
@@ -13,3 +16,40 @@
 
 .next-leave-to
   +translate3d(0, -100%, 0)
+
+
+.prev-enter-active,
+.prev-leave-active
+  +transition($mainTransition)
+  position: absolute !important
+  top: 0
+  left: 0
+
+.prev-enter
+  +translate3d(0, -100%, 0)
+
+.prev-enter-to
+  +translate3d(0, 0, 0)
+
+.prev-leave
+  +translate3d(0, 0, 0)
+
+.prev-leave-to
+  +translate3d(0, 100%, 0)
+
+
+.slide-enter-active,
+.slide-leave-active
+  +transition($mainTransition)
+
+.slide-enter
+  opacity: 0
+
+.slide-enter-to
+  opacity: 1
+
+.slide-leave
+  opacity: 1
+
+.slide-leave-to
+  opacity: 0
