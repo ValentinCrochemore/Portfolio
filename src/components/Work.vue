@@ -25,12 +25,18 @@
     },
     data: function () {
       return {
-        works: []
+        works: [],
+        allowedTime: 300,
+        threshold: 150,
+        restraint: 100
       }
     },
     mounted: function () {
       $('nav').remove()
       $(this.$el).one('mousewheel', this.onMouseWheel)
+      $(this.$el).on('touchstart', this.onTouchStart)
+      $(this.$el).on('touchmove', this.onTouchMove)
+      $(this.$el).on('touchend', this.onTouchEnd)
       document.querySelector('.work').focus()
       works.query().then(response => {
         this.works = response.data
@@ -41,7 +47,6 @@
     },
     watch: {
       '$route' (to, from) {
-        $(this.$el).one('mousewheel', this.onMouseWheel)
         this.transitionName = to.params.id > from.params.id ? 'next' : 'prev'
       }
     },
@@ -63,20 +68,53 @@
           this.next()
         }
       },
-      next: function () {
-        if (this.$route.params.id < this.works.length) {
-          this.$router.push({ name: 'work', params: {id: parseInt(this.$route.params.id) + 1} })
+      onTouchStart: function (e) {
+        console.log(e)
+        let touchObj = e.changedTouches[0]
+        this.swipeDir = 'none'
+        this.dist = 0
+        this.startX = touchObj.pageX
+        this.startY = touchObj.pageY
+        this.startTime = e.timeStamp
+        e.preventDefault()
+      },
+      onTouchMove: function (e) {
+        e.preventDefault()
+      },
+      onTouchEnd: function (e) {
+        let touchObj = e.changedTouches[0]
+        let distX = touchObj.pageX - this.startX
+        let distY = touchObj.pageY - this.startY
+        let elapsedTime = e.timeStamp - this.startTime
+        if (elapsedTime <= this.allowedTime) {
+          if (Math.abs(distY) >= this.threshold && Math.abs(distX) <= this.restraint) {
+            this.swipeDirection = (distY < 0) ? 'up' : 'down'
+          }
+        }
+        this.handleSwipe(this.swipeDirection)
+        e.preventDefault()
+      },
+      handleSwipe: function (swipeDirection) {
+        switch (swipeDirection) {
+          case 'up':
+            this.next()
+            break
+          case 'down':
+            this.prev()
+            break
         }
       },
       prev: function () {
         if (this.$route.params.id > 1) {
           this.$router.push({ name: 'work', params: {id: parseInt(this.$route.params.id) - 1} })
         }
+      },
+      next: function () {
+        if (this.$route.params.id < this.works.length) {
+          this.$router.push({ name: 'work', params: {id: parseInt(this.$route.params.id) + 1} })
+        }
       }
     }
   }
 
 </script>
-
-
-
