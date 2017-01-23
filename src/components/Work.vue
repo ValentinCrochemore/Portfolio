@@ -23,15 +23,25 @@
       WorkContent,
       WorkNavigation
     },
+    data: function () {
+      return {
+        works: []
+      }
+    },
     mounted: function () {
       $('nav').remove()
+      $(this.$el).one('mousewheel', this.onMouseWheel)
       document.querySelector('.work').focus()
       works.query().then(response => {
         this.works = response.data
       })
     },
+    destroyed: function () {
+      this.$off()
+    },
     watch: {
       '$route' (to, from) {
+        $(this.$el).one('mousewheel', this.onMouseWheel)
         this.transitionName = to.params.id > from.params.id ? 'next' : 'prev'
       }
     },
@@ -40,16 +50,33 @@
         this.$router.push({ path: '/', hash: 'works' })
       },
       onUpPress: function () {
-        if (this.$route.params.id > 1) {
-          this.$router.push({ name: 'work', params: {id: parseInt(this.$route.params.id) - 1} })
-        }
+        this.prev()
       },
       onDownPress: function () {
+        this.next()
+      },
+      onMouseWheel: function (e) {
+        console.log(e)
+        if (e.originalEvent.wheelDelta > 0) {
+          this.prev()
+        } else {
+          this.next()
+        }
+      },
+      next: function () {
         if (this.$route.params.id < this.works.length) {
           this.$router.push({ name: 'work', params: {id: parseInt(this.$route.params.id) + 1} })
+        }
+      },
+      prev: function () {
+        if (this.$route.params.id > 1) {
+          this.$router.push({ name: 'work', params: {id: parseInt(this.$route.params.id) - 1} })
         }
       }
     }
   }
 
 </script>
+
+
+
