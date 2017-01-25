@@ -124,8 +124,7 @@ a
   text-transform: uppercase
   text-decoration: none
   position: absolute
-  top: 30px
-  left: 30px
+  padding: 30px
   display: flex
   align-items: center
   z-index: 1
@@ -139,13 +138,18 @@ a
     .arrow
       +translate3d(-10px, 0, 0)
 
-  +phone
+  +phoneAndTablet
     position: static
     padding: 15px 0 0 15px
+
+  +phoneLandscape
+    position: absolute
+    padding: 0
 
 // Button Arrows
 .arrows
   position: absolute
+  padding: 50px
 
   .arrow
     +transition($mainTransition)
@@ -157,12 +161,18 @@ a
       +transform("rotate(90deg) translate3d(0, 0, 0)")
       +transition($mainTransition)
 
+    +phoneLandscape
+      top: 20px
+
   &.next
     bottom: 80px
 
     img
       +transform("rotate(-90deg) translate3d(0, 0, 0)")
       +transition($mainTransition)
+
+    +phoneLandscape
+      bottom: 20px
 
   &:hover
     &.prev
