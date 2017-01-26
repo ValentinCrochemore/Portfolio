@@ -4,14 +4,14 @@
       <router-link :to="{ path: '/', hash: 'works' }" class="back"><img class="arrow" src="/static/images/arrow.png">Back</router-link>
       <h2 class="title">{{ work.title }}</h2>
       <div class="container">
-        <p class="type">{{ work.type }}</p>
         <div class="wrapper work-wrapper">
+          <p class="type">{{ work.type }}</p>
           <img class="image" v-lazy="imageSmall">
           <ul class="technologies">
             <li v-for="technology in work.technologies">{{ technology }}</li>
           </ul>
+          <p class="client">{{ work.client }}</p>
         </div>
-        <p class="client">{{ work.client }}</p>
       </div>
       <div class="discover">
         <a :href="work.link" target="_blank">Discover</a>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+  // import $ from 'jquery'
   import { works } from '../../utils/globals.js'
 
   export default {
@@ -31,6 +32,13 @@
         work: {},
         imageSmall: ''
       }
+    },
+    created: function () {
+      /* this.$Lazyload.$once('loaded', () => {
+        console.log('loaded')
+        $('.image').siblings().addClass('loaded')
+        $('.title, .discover').addClass('loaded')
+      }) */
     },
     mounted: function () {
       works.query().then(response => {
@@ -53,8 +61,6 @@
     }
   }
 </script>
-
-
 
 
 

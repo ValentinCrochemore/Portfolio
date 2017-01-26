@@ -1,5 +1,6 @@
 <template>
   <div
+    :id="'work-' + $route.params.id"
     class="work"
     tabindex="0"
     @keyup.left="onLeftPress()"
@@ -26,6 +27,7 @@
     data: function () {
       return {
         works: [],
+        work: {},
         allowedTime: 300,
         threshold: 150,
         restraint: 100
@@ -33,7 +35,6 @@
     },
     mounted: function () {
       $('nav').remove()
-      $(this.$el).one('mousewheel', this.onMouseWheel)
       $(this.$el).on('touchstart', this.onTouchStart)
       $(this.$el).on('touchmove', this.onTouchMove)
       $(this.$el).on('touchend', this.onTouchEnd)
@@ -60,14 +61,6 @@
       onDownPress: function () {
         this.next()
       },
-      onMouseWheel: function (e) {
-        console.log(e)
-        if (e.originalEvent.wheelDelta > 0) {
-          this.prev()
-        } else {
-          this.next()
-        }
-      },
       onTouchStart: function (e) {
         console.log(e)
         let touchObj = e.changedTouches[0]
@@ -87,7 +80,9 @@
         let distY = touchObj.pageY - this.startY
         let elapsedTime = e.timeStamp - this.startTime
         if (elapsedTime <= this.allowedTime) {
-          if (Math.abs(distY) >= this.threshold && Math.abs(distX) <= this.restraint) {
+          if (Math.abs(distX) >= this.threshold && Math.abs(distY) <= this.restraint) {
+            this.swipeDirection = (distX < 0) ? 'left' : 'right'
+          } else if (Math.abs(distY) >= this.threshold && Math.abs(distX) <= this.restraint) {
             this.swipeDirection = (distY < 0) ? 'up' : 'down'
           }
         }
@@ -95,7 +90,11 @@
         e.preventDefault()
       },
       handleSwipe: function (swipeDirection) {
+        console.log(swipeDirection)
         switch (swipeDirection) {
+          case 'right':
+            this.$router.push({ path: '/', hash: 'works' })
+            break
           case 'up':
             this.next()
             break

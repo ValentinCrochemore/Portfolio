@@ -13,6 +13,7 @@
           </div>
         </div>
       </div>
+      <p class="copyright">&copy; Valentin Crochemore - 2017</p>
       <div class="socials-container">
         <div class="socials-wrapper">
           <a class="icon-twitter" href="https://twitter.com/VCrochemore" target="_blank"></a>

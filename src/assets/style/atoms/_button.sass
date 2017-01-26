@@ -106,6 +106,7 @@ a
   font-size: 23px
   margin-bottom: 40px
   text-align: center
+  opacity: 0
 
   a
     text-decoration: none
@@ -144,7 +145,6 @@ a
 
   +phoneLandscape
     position: absolute
-    padding: 0
 
 // Button Arrows
 .arrows
@@ -162,7 +162,8 @@ a
       +transition($mainTransition)
 
     +phoneLandscape
-      top: 20px
+      top: 0
+      padding: 20px 20px 0
 
   &.next
     bottom: 80px
@@ -172,7 +173,8 @@ a
       +transition($mainTransition)
 
     +phoneLandscape
-      bottom: 20px
+      bottom: 0
+      padding: 0 20px 20px
 
   &:hover
     &.prev
