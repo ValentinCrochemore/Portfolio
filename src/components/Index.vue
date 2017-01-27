@@ -5,6 +5,7 @@
     tabindex="0"
     @keyup.right.prevent="onRightPress()"
   >
+    <diamond v-for="n in diamondNumber"></diamond>
     <app-header></app-header>
     <home></home>
     <Works></Works>
@@ -15,6 +16,7 @@
 <script>
   import $ from 'jquery'
   import 'fullpage.js'
+  import Diamond from './Diamond'
   import AppHeader from './partials/Header'
   import Home from './Home'
   import Works from './Works'
@@ -23,6 +25,7 @@
   export default {
     name: 'index',
     components: {
+      Diamond,
       AppHeader,
       Home,
       Works,
@@ -30,7 +33,8 @@
     },
     data: function () {
       return {
-        isMoving: false
+        isMoving: false,
+        diamondNumber: Math.round((Math.random() * 20) + 5)
       }
     },
     mounted: function () {
