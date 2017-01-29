@@ -2,10 +2,7 @@
   {
     "id": 1,
     "title": "L'anthologie Palatine",
-    "image": {
-      "small": "/static/images/works/small/anthologie-palatine.png",
-      "big": "/static/images/works/big/anthologie-palatine.png"
-    },
+    "image": "/static/images/works/anthologie-palatine.png",
     "link": "http://anthologie.valentin-crochemore.fr/#!/",
     "type": "Front End Development",
     "client": "Université de Montréal",
@@ -18,38 +15,54 @@
   },
   {
     "id": 2,
-    "title": "work 2",
-    "image": {
-      "big": "https://images.unsplash.com/27/winter-view.jpeg?dpr=1.25&auto=format&fit=crop&w=1199&h=899&q=80&cs=tinysrgb&crop=",
-      "small": "https://images.unsplash.com/photo-1437652010333-fbf2cd02a4f8?dpr=1.25&auto=format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop="
-    },
-    "type": "work"
+    "title": "Jamstagr",
+    "image": "/static/images/works/jamstagr.png",
+    "link": "http://dev.jamstagr.com",
+    "type": "Back End Development",
+    "client": "School Project",
+    "technologies": [
+      "Ruby On Rails",
+      "API",
+      "Jquery"
+    ]
   },
   {
     "id": 3,
-    "title": "work 3",
-    "image": {
-      "big": "https://images.unsplash.com/photo-1437652010333-fbf2cd02a4f8?dpr=1.25&auto=format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop=",
-      "small": "https://images.unsplash.com/27/winter-view.jpeg?dpr=1.25&auto=format&fit=crop&w=1199&h=899&q=80&cs=tinysrgb&crop="
-    },
-    "type": "work"
+    "title": "Senses",
+    "image": "/static/images/works/senses.png",
+    "link": "http://senses.tom-bonnike.com/",
+    "type": "Front End Development",
+    "client": "School Project",
+    "technologies": [
+      "HTML5/CSS3",
+      "JQuery",
+      "NodeJS"
+    ]
   },
   {
     "id": 4,
-    "title": "work 4",
-    "image": {
-      "big": "https://images.unsplash.com/27/winter-view.jpeg?dpr=1.25&auto=format&fit=crop&w=1199&h=899&q=80&cs=tinysrgb&crop=",
-      "small": "https://images.unsplash.com/photo-1437652010333-fbf2cd02a4f8?dpr=1.25&auto=format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop="
-    },
-    "type": "work"
+    "title": "4L Trophy",
+    "image": "/static/images/works/4ltrophy.png",
+    "link": "http://4ltrophy.valentin-crochemore.fr/le-grand-depart",
+    "type": "Front End Development",
+    "client": "School Project",
+    "technologies": [
+      "HTML5/CSS3",
+      "JQuery",
+      "Handlebars"
+    ]
   },
   {
     "id": 5,
-    "title": "work 5",
-    "image": {
-      "big": "https://images.unsplash.com/photo-1437652010333-fbf2cd02a4f8?dpr=1.25&auto=format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop=",
-      "small": "https://images.unsplash.com/27/winter-view.jpeg?dpr=1.25&auto=format&fit=crop&w=1199&h=899&q=80&cs=tinysrgb&crop="
-    },
-    "type": "work"
+    "title": "Portfolio",
+    "image": "/static/images/works/giovanni.png",
+    "link": "http://giovannifaina.fr",
+    "type": "Front End Development",
+    "client": "Giovanni Faina",
+    "technologies": [
+      "HTML5/CSS3",
+      "JQuery",
+      "TweenMax"
+    ]
   }
 ]

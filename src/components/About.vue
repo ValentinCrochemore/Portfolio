@@ -7,7 +7,11 @@
       <h3 class="subtitle">About</h3>
       <div class="about-container">
         <div class="about-wrapper">
-          <p class="about-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula bibendum magna a interdum. Maecenas lobortis dapibus odio et tincidunt. Suspendisse libero mauris, maximus non venenatis et, mollis in ante. Cras molestie congue arcu a iaculis. Vivamus tempor, ligula et finibus malesuada, elit nibh dignissim ex, in fringilla dui nunc vitae ante.</p>
+          <p class="about-content">Hi ! I'm a french web developer !</p>
+          <p class="about-content">I'm studying at HETIC, the great school of the internet and looking for a 6 month international internship</p>
+          <p class="about-content">My passion is Front End Development with technologies such as HTML5/CSS3, ReactJS, VueJS or (of course) jQuery</p>
+          <p class="about-content">But I love Back End too and I worked with, e.g., Symfony and Ruby on Rails</p>
+          <p class="about-content">Feel free to contact me to know more and, maybe, hire me :)</p>
           <div class="about-link">
             <a href="#">Download my resume</a>
           </div>

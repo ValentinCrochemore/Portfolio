@@ -9,7 +9,7 @@
         <li v-for="work in works" :id="'work-' + work.id">
           <router-link
                   :to="{ name: 'work', params: { id: work.id }}"
-                  v-lazy:background-image="work.image.small"
+                  v-lazy:background-image="work.image"
           >
             <div class="works-content">
               <div class="works-wrapper">
@@ -41,4 +41,3 @@
     }
   }
 </script>
-

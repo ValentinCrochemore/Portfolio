@@ -6,7 +6,7 @@
       <div class="container">
         <div class="wrapper work-wrapper">
           <p class="type">{{ work.type }}</p>
-          <img class="image" v-lazy="imageSmall">
+          <img class="image" v-lazy="work.image">
           <ul class="technologies">
             <li v-for="technology in work.technologies">{{ technology }}</li>
           </ul>
@@ -61,9 +61,6 @@
     }
   }
 </script>
-
-
-
 
 
 
