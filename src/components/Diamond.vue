@@ -11,6 +11,9 @@
       this.randomDiamondParams()
       $('#app').on('mousemove', this.onMouseMove)
     },
+    beforeDestroy: function () {
+      this.$off()
+    },
     methods: {
       randomDiamondParams: function () {
         let size = Math.round((Math.random() * 100 + Math.random() * 100) + 40)
@@ -28,8 +31,14 @@
         this.$el.style.left = leftPosition + '%'
       },
       onMouseMove: function (e) {
-        $(this.$el).css('transform', 'rotate(45deg) translate3d(' + e.originalEvent.movementX + 'px, ' + e.originalEvent.movementY + 'px, 0)')
+        let x = -e.pageX / 10
+        let y = -e.pageY / 10
+        $(this.$el).css('transform', 'rotate(45deg) translate3d(' + x + 'px, ' + y + 'px, 0)')
       }
     }
   }
 </script>
+
+
+
+

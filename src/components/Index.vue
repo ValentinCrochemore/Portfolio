@@ -34,7 +34,7 @@
     data: function () {
       return {
         isMoving: false,
-        diamondNumber: Math.round((Math.random() * 20) + 5)
+        diamondNumber: Math.round((Math.random() * 20) + 10)
       }
     },
     mounted: function () {

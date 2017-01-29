@@ -9,15 +9,26 @@
         <h2 class="job">Front / Back end Developer</h2>
         <div class="job-description">
           <vue-typer
-                  text='Petite description de ce métier merveilleusement merveilleux !'
+                  class="first-typer"
+                  text='npm install intership'
+                  caret-animation='smooth'
                   :repeat='0'
                   :type-delay='20'
-                  @typed='onComplete'
+                  @typed='onFirstComplete'
           ></vue-typer>
           <br>
           <vue-typer
-                  text='Et aussi de ma belle personnalité...'
-                  v-if="isCompleted"
+                  text='Internship not found!'
+                  v-if="isFirstCompleted"
+                  :repeat='0'
+                  :type-delay='20'
+                  :pre-type-delay='postTypeDelay'
+                  @typed='onSecondComplete'
+          ></vue-typer>
+          <br>
+          <vue-typer
+                  text='Looking for an internship from June to December, everywhere around the world!'
+                  v-if="isSecondCompleted"
                   :repeat='0'
                   :type-delay='20'
           ></vue-typer>
@@ -41,13 +52,25 @@
     },
     data: function () {
       return {
-        isCompleted: false
+        isFirstCompleted: false,
+        isSecondCompleted: false,
+        postTypeDelay: 1500
       }
     },
     methods: {
-      onComplete: function () {
-        this.isCompleted = true
+      onFirstComplete: function () {
+        this.isFirstCompleted = true
+        setTimeout(() => {
+          document.querySelector('.caret').style.display = 'none'
+        }, this.postTypeDelay)
+      },
+      onSecondComplete: function () {
+        this.isSecondCompleted = true
       }
     }
   }
 </script>
+
+
+
+
