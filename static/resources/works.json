@@ -51,18 +51,5 @@
       "JQuery",
       "Handlebars"
     ]
-  },
-  {
-    "id": 5,
-    "title": "Portfolio",
-    "image": "/static/images/works/giovanni.png",
-    "link": "http://giovannifaina.fr",
-    "type": "Front End Development",
-    "client": "Giovanni Faina",
-    "technologies": [
-      "HTML5/CSS3",
-      "JQuery",
-      "TweenMax"
-    ]
   }
 ]

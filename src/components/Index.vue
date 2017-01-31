@@ -5,7 +5,9 @@
     tabindex="0"
     @keyup.right.prevent="onRightPress()"
   >
-    <diamond v-for="n in diamondNumber"></diamond>
+    <div class="diamonds">
+      <diamond v-for="n in diamondNumber"></diamond>
+    </div>
     <app-header></app-header>
     <home></home>
     <Works></Works>

@@ -35,9 +35,9 @@
     },
     mounted: function () {
       $('nav').remove()
-      $(this.$el).on('touchstart', this.onTouchStart)
-      $(this.$el).on('touchmove', this.onTouchMove)
-      $(this.$el).on('touchend', this.onTouchEnd)
+      $('.work-content-container').on('touchstart', this.onTouchStart)
+      $('.work-content-container').on('touchmove', this.onTouchMove)
+      $('.work-content-container').on('touchend', this.onTouchEnd)
       document.querySelector('.work').focus()
       works.query().then(response => {
         this.works = response.data
@@ -62,19 +62,21 @@
         this.next()
       },
       onTouchStart: function (e) {
-        console.log(e)
+        console.log('touchstart')
+        e.preventDefault()
+        e.stopPropagation()
         let touchObj = e.changedTouches[0]
         this.swipeDir = 'none'
         this.dist = 0
         this.startX = touchObj.pageX
         this.startY = touchObj.pageY
         this.startTime = e.timeStamp
-        e.preventDefault()
       },
       onTouchMove: function (e) {
         e.preventDefault()
       },
       onTouchEnd: function (e) {
+        e.preventDefault()
         let touchObj = e.changedTouches[0]
         let distX = touchObj.pageX - this.startX
         let distY = touchObj.pageY - this.startY
@@ -87,10 +89,8 @@
           }
         }
         this.handleSwipe(this.swipeDirection)
-        e.preventDefault()
       },
       handleSwipe: function (swipeDirection) {
-        console.log(swipeDirection)
         switch (swipeDirection) {
           case 'right':
             this.$router.push({ path: '/', hash: 'works' })
@@ -117,3 +117,4 @@
   }
 
 </script>
+

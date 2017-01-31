@@ -9,6 +9,7 @@
     name: 'diamond',
     mounted: function () {
       this.randomDiamondParams()
+      setTimeout(() => { $(this.$el).addClass('loaded') }, 100)
       $('#app').on('mousemove', this.onMouseMove)
     },
     beforeDestroy: function () {

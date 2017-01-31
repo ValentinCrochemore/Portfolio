@@ -2,36 +2,48 @@ p
   margin: 0
 
   &.about-content
-    font-size: 25px
-    text-indent: 35px
+    font-size: 22px
     line-height: 1.5em
 
+    &:first-child
+      margin-bottom: 20px
+
+    &:nth-child(5)
+      margin-top: 20px
+
+    a
+      background: $mainColor
+      color: $white
+      border: 1px solid $mainColor
+      padding: 0 5px
+      +transition($mainTransition)
+
+      &:hover
+        background: $white
+        color: $mainColor
+
     +phone
-      font-size: 20px
+      font-size: 15px
 
   &.type
     font-size: 33px
     font-family: $medium
-    text-align: center
-    width: 60%
     opacity: 0
 
     +phone
-      font-size: 25px
+      font-size: 20px
 
     +phoneAndTablet
       width: 100%
       margin-bottom: 15px
 
   &.client
-    font-size: 30px
+    font-size: 24px
     font-family: $italic
-    text-align: center
-    width: 60%
     opacity: 0
 
     +phone
-      font-size: 25px
+      font-size: 15px
 
     +phoneAndTablet
       width: 100%
@@ -40,7 +52,7 @@ p
   &.copyright
     position: absolute
     bottom: 10px
-    left: 0
+    left: 10%
 
 .first-typer
   .caret
@@ -49,4 +61,8 @@ p
     &.complete
       display: inline-block
       background: $white
+
+
+
+
 

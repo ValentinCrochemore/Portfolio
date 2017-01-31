@@ -7,11 +7,11 @@
       <h3 class="subtitle">About</h3>
       <div class="about-container">
         <div class="about-wrapper">
-          <p class="about-content">Hi ! I'm a french web developer !</p>
-          <p class="about-content">I'm studying at HETIC, the great school of the internet and looking for a 6 month international internship</p>
-          <p class="about-content">My passion is Front End Development with technologies such as HTML5/CSS3, ReactJS, VueJS or (of course) jQuery</p>
-          <p class="about-content">But I love Back End too and I worked with, e.g., Symfony and Ruby on Rails</p>
-          <p class="about-content">Feel free to contact me to know more and, maybe, hire me :)</p>
+          <p class="about-content">Hi ! I'm a french <strong>web developer</strong> !</p>
+          <p class="about-content">I'm studying at <a href="http://www.hetic.net/" target="_blank">HETIC</a>, the great school of the internet and looking for a <strong>6 month</strong> international <strong>internship</strong></p>
+          <p class="about-content">My passion is <strong>Front</strong> End Development with technologies such as HTML5/CSS3, ReactJS, VueJS or (of course) jQuery</p>
+          <p class="about-content">But I love <strong>Back</strong> End too and I worked with, e.g., Symfony and Ruby on Rails</p>
+          <p class="about-content">Feel free to <a href="mailto:valentin.crochemore@gmail.com">contact me</a> to know more and, maybe, hire me :)</p>
           <div class="about-link">
             <a href="#">Download my resume</a>
           </div>
@@ -35,4 +35,5 @@
     name: 'about'
   }
 </script>
+
 

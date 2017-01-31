@@ -46,16 +46,16 @@ a
       color: $white
 
   +phone
-    margin-top: 30px
+    margin-top: 15px
 
     a
-      font-size: 20px
+      font-size: 15px
 
 // Button socials
 .socials-container
   position: absolute
-  bottom: 20px
-  right: 50px
+  bottom: 30px
+  right: 30px
   width: 75px
   height: 75px
   opacity: 0
@@ -99,7 +99,8 @@ a
       left: 0
 
   +phone
-    right: -20px
+    right: 15px
+    bottom: 15px
 
 // Button Discover
 .discover
@@ -161,6 +162,10 @@ a
       +transform("rotate(90deg) translate3d(0, 0, 0)")
       +transition($mainTransition)
 
+    +phoneAndTablet
+      top: 0
+      padding: 40px
+
     +phoneLandscape
       top: 0
       padding: 20px 20px 0
@@ -171,6 +176,10 @@ a
     img
       +transform("rotate(-90deg) translate3d(0, 0, 0)")
       +transition($mainTransition)
+
+    +phoneAndTablet
+      bottom: 0
+      padding: 40px
 
     +phoneLandscape
       bottom: 0
@@ -184,6 +193,7 @@ a
     &.next
       img
         +transform("rotate(-90deg) translate3d(-10px, 0, 0)")
+
 
 
 

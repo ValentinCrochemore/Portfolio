@@ -4,6 +4,7 @@
             :to="{ name: 'work', params: {id: work.id - 1}}"
             v-if="isFirstWork"
             class="arrows prev"
+            @click="onPrevTap"
     >
       <img class="arrow" src="/static/images/arrow.png">
     </router-link>
@@ -51,6 +52,11 @@
         this.work = this.works[to.params.id - 1]
         this.isFirstWork = parseInt(to.params.id) !== 1
         this.isLastWork = parseInt(to.params.id) !== this.works.length
+      }
+    },
+    methods: {
+      onPrevTap: function () {
+        console.log('click')
       }
     }
   }
