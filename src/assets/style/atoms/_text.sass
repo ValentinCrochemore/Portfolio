@@ -22,6 +22,20 @@ p
         background: $white
         color: $mainColor
 
+    +smallPhone
+      &:first-child
+        margin-bottom: 5px
+
+      &:nth-child(5)
+        margin-top: 5px
+
+    +smallPhoneLandscape
+      &:first-child
+        margin-bottom: 0
+
+      &:nth-child(5)
+        margin-top: 0
+
     +phone
       font-size: 15px
 

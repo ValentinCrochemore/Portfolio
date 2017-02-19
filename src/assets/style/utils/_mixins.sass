@@ -39,6 +39,14 @@
   +transform(scaleY($scale))
 
 // Media Queries
+=smallPhone
+  @media (max-height: #{$smallPhoneHeight}) and (orientation: portrait)
+    @content
+
+=smallPhoneLandscape
+  @media (max-height: #{$smallPhoneHeight}) and (orientation: landscape)
+    @content
+
 =phone
   @media (max-width: #{$tabletWidth - 1})
     @content

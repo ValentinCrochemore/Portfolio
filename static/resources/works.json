@@ -51,5 +51,18 @@
       "JQuery",
       "Handlebars"
     ]
+  },
+  {
+    "id": 5,
+    "title": "Mia - The Movie",
+    "image": "/static/images/works/mia.png",
+    "link": "http://mia-lefilm.fr",
+    "type": "Front End Development",
+    "client": "School Project",
+    "technologies": [
+      "HTML5/CSS3",
+      "JQuery",
+      "fullPage.js"
+    ]
   }
 ]

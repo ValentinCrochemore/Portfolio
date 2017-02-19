@@ -48,6 +48,9 @@ h2
     padding-top: 30px
     opacity: 0
 
+    +smallPhoneLandscape
+      font-size: 25px !important
+
     +phone
       font-size: 40px
 
@@ -57,9 +60,19 @@ h3
     font-size: 45px
     padding: 30px 0 0
 
+    +smallPhone
+      margin: 5px 0
+
+    +smallPhoneLandscape
+      margin: 5px 0 0
+
     +phone
       font-size: 35px
       padding: 10px 0 0
+      margin-bottom: 0
+
+    +phoneLandscape
+      margin: 15px 0 0
 
 h4
   margin: 0
@@ -75,4 +88,7 @@ h4
     +translate3d(-200px, 0, 0)
   100%
     +translate3d(0, 0, 0)
+
+
+
 
