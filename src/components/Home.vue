@@ -27,7 +27,7 @@
           ></vue-typer>
           <br>
           <vue-typer
-                  text='Looking for an internship from June to December, anywhere around the world!'
+                  text='Looking for an internship from June to November, anywhere around the world!'
                   v-if="isSecondCompleted"
                   :repeat='0'
                   :type-delay='20'

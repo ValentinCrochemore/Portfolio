@@ -13,7 +13,7 @@
           <p class="about-content">But I love <strong>Back</strong> End too and I mostly worked with Symfony and Ruby on Rails</p>
           <p class="about-content">Feel free to <a href="mailto:valentin.crochemore@gmail.com">contact me</a> to know more and, maybe, hire me :)</p>
           <div class="about-link">
-            <a href="#">Download my resume</a>
+            <a target="_blank" href="/static/resume/international-resume.pdf">Download my resume</a>
           </div>
         </div>
       </div>
