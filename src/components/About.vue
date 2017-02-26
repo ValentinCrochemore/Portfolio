@@ -21,7 +21,7 @@
       <div class="socials-container">
         <div class="socials-wrapper">
           <a class="icon-twitter" href="https://twitter.com/VCrochemore" target="_blank"></a>
-          <a class="icon-linkedin" href="https://fr.linkedin.com/in/valentin-crochemore-0b347088" target="_blank"></a>
+          <a class="icon-linkedin" href="https://fr.linkedin.com/in/ValentinCrochemore" target="_blank"></a>
           <a class="icon-mail" href="mailto:valentin.crochemore@gmail.com"></a>
           <a class="icon-github" href="https://github.com/ValentinCrochemore" target="_blank"></a>
         </div>
