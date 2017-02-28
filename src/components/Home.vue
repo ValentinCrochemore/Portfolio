@@ -10,7 +10,7 @@
         <div class="job-description">
           <vue-typer
                   class="first-typer"
-                  text='npm install intership'
+                  text='npm install internship'
                   caret-animation='smooth'
                   :repeat='0'
                   :type-delay='20'
