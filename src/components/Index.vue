@@ -46,6 +46,13 @@
       $('#fullpage').fullpage({
         anchors: ['home', 'works', 'about'],
         fixedElements: '#menu',
+        afterLoad: function (anchorLink, index) {
+          if (index === 1) {
+            $('.vue-typer').fadeIn()
+          } else {
+            $('.vue-typer').fadeOut()
+          }
+        },
         loopBottom: true
       })
     },
