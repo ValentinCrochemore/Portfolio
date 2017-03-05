@@ -36,22 +36,6 @@
     mounted: function () {
       $('nav').remove()
       document.querySelector('.work').focus()
-      /* let workId = 'work-' + this.$route.params.id
-      let workElement = document.getElementById(workId)
-      let swipeRegion = new ZingTouch.Region(workElement)
-      let customSwipe = new ZingTouch.Swipe({
-        maxRestTime: 0,
-        escapeVelocity: 0
-      })
-      swipeRegion.bind(workElement, customSwipe, (e) => {
-        console.log(e)
-        let direction = e.detail.data[0].currentDirection
-        if (direction > 250 && direction < 290) {
-          this.prev()
-        } else if (direction > 70 && direction < 110) {
-          this.next()
-        }
-      }) */
       works.query().then(response => {
         this.works = response.data
       })
