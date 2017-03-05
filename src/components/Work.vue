@@ -1,15 +1,18 @@
 <template>
-  <div
+  <v-touch
     :id="'work-' + $route.params.id"
     class="work"
     tabindex="0"
+    v-on:swipedown="prev()"
+    v-on:swipeup="next()"
+    v-on:swiperight="onLeftPress()"
     @keyup.left="onLeftPress()"
     @keyup.up="onUpPress()"
     @keyup.down="onDownPress()"
   >
     <work-content></work-content>
     <work-navigation></work-navigation>
-  </div>
+  </v-touch>
 </template>
 
 <script>
@@ -27,18 +30,28 @@
     data: function () {
       return {
         works: [],
-        work: {},
-        allowedTime: 300,
-        threshold: 150,
-        restraint: 100
+        work: {}
       }
     },
     mounted: function () {
       $('nav').remove()
-      $('.work-content-container').on('touchstart', this.onTouchStart)
-      $('.work-content-container').on('touchmove', this.onTouchMove)
-      $('.work-content-container').on('touchend', this.onTouchEnd)
       document.querySelector('.work').focus()
+      /* let workId = 'work-' + this.$route.params.id
+      let workElement = document.getElementById(workId)
+      let swipeRegion = new ZingTouch.Region(workElement)
+      let customSwipe = new ZingTouch.Swipe({
+        maxRestTime: 0,
+        escapeVelocity: 0
+      })
+      swipeRegion.bind(workElement, customSwipe, (e) => {
+        console.log(e)
+        let direction = e.detail.data[0].currentDirection
+        if (direction > 250 && direction < 290) {
+          this.prev()
+        } else if (direction > 70 && direction < 110) {
+          this.next()
+        }
+      }) */
       works.query().then(response => {
         this.works = response.data
       })
@@ -60,48 +73,6 @@
       },
       onDownPress: function () {
         this.next()
-      },
-      onTouchStart: function (e) {
-        console.log('touchstart')
-        e.preventDefault()
-        e.stopPropagation()
-        let touchObj = e.changedTouches[0]
-        this.swipeDir = 'none'
-        this.dist = 0
-        this.startX = touchObj.pageX
-        this.startY = touchObj.pageY
-        this.startTime = e.timeStamp
-      },
-      onTouchMove: function (e) {
-        e.preventDefault()
-      },
-      onTouchEnd: function (e) {
-        e.preventDefault()
-        let touchObj = e.changedTouches[0]
-        let distX = touchObj.pageX - this.startX
-        let distY = touchObj.pageY - this.startY
-        let elapsedTime = e.timeStamp - this.startTime
-        if (elapsedTime <= this.allowedTime) {
-          if (Math.abs(distX) >= this.threshold && Math.abs(distY) <= this.restraint) {
-            this.swipeDirection = (distX < 0) ? 'left' : 'right'
-          } else if (Math.abs(distY) >= this.threshold && Math.abs(distX) <= this.restraint) {
-            this.swipeDirection = (distY < 0) ? 'up' : 'down'
-          }
-        }
-        this.handleSwipe(this.swipeDirection)
-      },
-      handleSwipe: function (swipeDirection) {
-        switch (swipeDirection) {
-          case 'right':
-            this.$router.push({ path: '/', hash: 'works' })
-            break
-          case 'up':
-            this.next()
-            break
-          case 'down':
-            this.prev()
-            break
-        }
       },
       prev: function () {
         if (this.$route.params.id > 1) {
