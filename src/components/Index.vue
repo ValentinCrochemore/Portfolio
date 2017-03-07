@@ -52,8 +52,7 @@
           } else {
             $('.vue-typer').fadeOut()
           }
-        },
-        loopBottom: true
+        }
       })
     },
     beforeDestroy: function () {
