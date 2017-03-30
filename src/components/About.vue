@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-      <p class="copyright">&copy; Valentin Crochemore - 2017</p>
+      <p class="copyright">&copy; Valentin Crochemore<span> - designed by <a href="http://giovannifaina.fr" target="_blank">Giovanni Faina</a></span></p>
       <div class="socials-container">
         <div class="socials-wrapper">
           <a class="icon-twitter" href="https://twitter.com/VCrochemore" target="_blank"></a>

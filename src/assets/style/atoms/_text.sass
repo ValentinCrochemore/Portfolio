@@ -68,6 +68,21 @@ p
     bottom: 10px
     left: 10%
 
+    a
+      background: $mainColor
+      color: $white
+      border: 1px solid $mainColor
+      padding: 0 5px
+      +transition($mainTransition)
+
+      &:hover
+        background: $white
+        color: $mainColor
+
+    +phone
+      span
+        display: none
+
 .first-typer
   .caret
     background: $white

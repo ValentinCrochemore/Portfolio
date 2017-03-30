@@ -1,24 +1,23 @@
 <template>
   <div id="app">
+    <div class="diamonds">
+      <diamond v-for="n in diamondNumber"></diamond>
+    </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Diamond from './components/Diamond'
+
 export default {
   name: 'app',
+  components: {
+    Diamond
+  },
   data: function () {
     return {
-      transitionName: 'slide'
-    }
-  },
-  watch: {
-    '$route' (to, from) {
-      if (to.params.id && from.params.id) {
-        this.transitionName = to.params.id > from.params.id ? 'next' : 'prev'
-      } else {
-        this.transitionName = 'slide'
-      }
+      diamondNumber: Math.round((Math.random() * 20) + 10)
     }
   }
 }
