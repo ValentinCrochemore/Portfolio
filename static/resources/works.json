@@ -54,15 +54,16 @@
   },
   {
     "id": 5,
-    "title": "Senses",
-    "image": "/static/images/works/senses.png",
-    "link": "http://senses.tom-bonnike.com/",
+    "title": "William Praszezinski's Portfolio",
+    "image": "/static/images/works/william.png",
+    "link": "http://www.williamp.fr/",
     "type": "Front End Development",
-    "client": "School Project",
+    "client": "William Praszezinski",
     "technologies": [
       "HTML5/CSS3",
-      "JQuery",
-      "NodeJS"
+      "Handlebars",
+      "Gulp",
+      "Bootstrap"
     ]
   }
 ]
