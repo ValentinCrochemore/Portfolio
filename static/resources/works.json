@@ -14,6 +14,20 @@
   },
   {
     "id": 2,
+    "title": "Twift",
+    "image": "/static/images/works/twift.png",
+    "link": "http://twift.co/",
+    "type": "Full Stack Development",
+    "client": "School Project",
+    "technologies": [
+      "Ruby on Rails",
+      "Chrome extension",
+      "Twitch & Twitter connect",
+      "HTML5/CSS3/JS"
+    ]
+  },
+  {
+    "id": 3,
     "title": "L'anthologie Palatine",
     "image": "/static/images/works/anthologie-palatine.png",
     "link": "http://anthologie.valentin-crochemore.fr/#!/",
@@ -27,7 +41,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Jamstagr",
     "image": "/static/images/works/jamstagr.png",
     "link": "http://jamstagr.valentin-crochemore.fr",
@@ -37,19 +51,6 @@
       "Ruby On Rails",
       "API",
       "Jquery"
-    ]
-  },
-  {
-    "id": 4,
-    "title": "Mia - The Movie",
-    "image": "/static/images/works/mia.png",
-    "link": "http://mia-lefilm.fr",
-    "type": "Front End Development",
-    "client": "School Project",
-    "technologies": [
-      "HTML5/CSS3",
-      "JQuery",
-      "fullPage.js"
     ]
   },
   {
